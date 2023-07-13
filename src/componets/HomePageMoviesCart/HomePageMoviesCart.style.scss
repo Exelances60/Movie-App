@@ -1,0 +1,30 @@
+.movies {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 15%;
+  margin-bottom: 2%;
+  transition: 300ms ease-in;
+  cursor: pointer;
+  border-bottom: 1px solid #252b2e;
+  &:hover {
+    background-color: #2f373b;
+  }
+  .movie-img {
+    width: 13%;
+    height: 70%;
+    margin-left: 5%;
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+      object-fit: cover;
+      box-shadow: -1px 4px 15px -6px rgba(0, 0, 0, 0.75);
+    }
+  }
+  .title {
+    width: 80%;
+    margin-left: 4%;
+    height: 90%;
+  }
+}
