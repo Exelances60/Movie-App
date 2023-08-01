@@ -4,13 +4,20 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { MovieApiProvider } from "./context/MovieApi";
+import { Provider } from "react-redux";
+import { persistor, store } from "./store/store";
+import { PersistGate } from "redux-persist/integration/react";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <MovieApiProvider>
-      <App />
-    </MovieApiProvider>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        {/*   <MovieApiProvider> */}
+        <App />
+        {/*   </MovieApiProvider> */}
+      </PersistGate>
+    </Provider>
   </React.StrictMode>
 );
 

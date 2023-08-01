@@ -1,7 +1,11 @@
 import React from "react";
 import "./NavigationBar.styles.scss";
+import { setQuery } from "../../store/movieApi/movieApi.action";
+import { useDispatch } from "react-redux";
 
-const NavigationBar = ({ setQuery }) => {
+const NavigationBar = () => {
+  const dispatch = useDispatch();
+
   return (
     <div className="navbar">
       <div className="logo">
@@ -11,7 +15,7 @@ const NavigationBar = ({ setQuery }) => {
         className="search-input"
         placeholder="Search Movie"
         onChange={(event) => {
-          setQuery(event.target.value);
+          dispatch(setQuery(event.target.value));
         }}
       ></input>
       <ul className="list">

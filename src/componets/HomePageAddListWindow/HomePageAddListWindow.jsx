@@ -1,9 +1,16 @@
-import React, { useContext } from "react";
 import "./HomePageAddListWindow.scss";
-import { MovieApiContext } from "../../context/MovieApi";
+
+import { Fade } from "react-reveal";
+import { useSelector } from "react-redux";
+import {
+  selectPickMovie,
+  selectİmbdData,
+} from "../../store/movieApi/movieApi.selector";
 
 const HomePageAddListWindow = () => {
-  const { pickMovie, imbdData } = useContext(MovieApiContext);
+  const pickMovie = useSelector(selectPickMovie);
+  const imbdData = useSelector(selectİmbdData);
+
   return (
     <>
       <div className="movie-cart">
@@ -12,10 +19,12 @@ const HomePageAddListWindow = () => {
             <img src={pickMovie.Poster} alt=""></img>
           </div>
           <div className="movie-cart-decps">
-            <h3>{pickMovie.Title}</h3>
-            <span>{`${imbdData.Released} - ${imbdData.Runtime}`}</span>
-            <span>{`${imbdData.Genre} `}</span>
-            <span>{`🎬 ${imbdData.imdbRating} IMDb rating `}</span>
+            <Fade right duration={1500} distance="20%">
+              <h3>{pickMovie.Title}</h3>
+              <span>{`${imbdData.Released} - ${imbdData.Runtime}`}</span>
+              <span>{`${imbdData.Genre} `}</span>
+              <span>{`🎬 ${imbdData.imdbRating} IMDb rating `}</span>
+            </Fade>
           </div>
         </div>
       </div>

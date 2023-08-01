@@ -1,13 +1,21 @@
-import React, { useContext } from "react";
 import "./HomePageAddList.styles.scss";
 import { MovieApiContext } from "../../context/MovieApi";
 import HomePageAddListWindow from "../HomePageAddListWindow/HomePageAddListWindow";
-
+import {
+  setPickMovie,
+  setCloseCart,
+} from "../../store/movieApi/movieApi.action";
 import HomePageMovieAbout from "../HomePageMovieAbout/HomePageMovieAbout";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  selectCloseCart,
+  selectİmbdData,
+} from "../../store/movieApi/movieApi.selector";
 
 const HomePageAddList = ({ setAddListMovie, rating, setRating }) => {
-  const { setPickMovie, closeCart, setCloseCart, imbdData } =
-    useContext(MovieApiContext);
+  const dispatch = useDispatch();
+  const closeCart = useSelector(selectCloseCart);
+  const imbdData = useSelector(selectİmbdData);
 
   const ratingChanged = (newRating) => {
     setRating(newRating);
@@ -18,8 +26,8 @@ const HomePageAddList = ({ setAddListMovie, rating, setRating }) => {
       <button
         className="close-btn"
         onClick={() => {
-          setPickMovie({});
-          setCloseCart(!closeCart);
+          dispatch(setPickMovie({}));
+          dispatch(setCloseCart(!closeCart));
         }}
       >
         x

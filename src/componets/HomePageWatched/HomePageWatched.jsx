@@ -1,12 +1,35 @@
 import React from "react";
 import "./HomePageWatched.scss";
-
+import { useDispatch, useSelector } from "react-redux";
+import {
+  selectTrailer,
+  selectWatchOpen,
+} from "../../store/movietrailerApi/trailer.selector";
+import { useEffect } from "react";
+import {
+  fetchTrailerData,
+  setWatch,
+} from "../../store/movietrailerApi/trailer.action";
+import { useState } from "react";
+import { selectPickMovie } from "../../store/movieApi/movieApi.selector";
 const HomePageWatched = ({
   closeCart,
   addListMovie,
   handleRemoveMovie,
   rating,
 }) => {
+  const dispatch = useDispatch();
+  const pickMovie = useSelector(selectPickMovie);
+  const watchOpen = useSelector(selectWatchOpen);
+
+  useEffect(() => {
+    dispatch(
+      fetchTrailerData(
+        `${pickMovie.Title}${pickMovie.Year}`.replace(/\s+/g, "")
+      )
+    );
+  }, [pickMovie]);
+
   return (
     <>
       {!closeCart ? (
@@ -23,6 +46,13 @@ const HomePageWatched = ({
                 <div className="views-title">
                   <p>{val.Title}</p>
                   <p>{`⭐ ${val.imdbRating} 🌟${rating} ⌛${val.Runtime}`}</p>
+                </div>
+                <div
+                  onClick={() => {
+                    dispatch(setWatch(!watchOpen));
+                  }}
+                >
+                  Watch
                 </div>
                 <button
                   className="remove-movie"

@@ -1,17 +1,22 @@
-import React, { useContext } from "react";
 import "./HomePageMoviesCart.style.scss";
 import { MovieApiContext } from "../../context/MovieApi";
+import { setPickMovie } from "../../store/movieApi/movieApi.action";
+import { useDispatch, useSelector } from "react-redux";
+import { selectCloseCart } from "../../store/movieApi/movieApi.selector";
+import { setCloseCart } from "../../store/movieApi/movieApi.action";
 
 const HomePageMoviesCart = ({ val }) => {
-  const { setPickMovie, setCloseCart, closeCart } = useContext(MovieApiContext);
+  const dispatch = useDispatch();
+  const closeCart = useSelector(selectCloseCart);
+
   return (
     <>
       <div
         className="movies"
         key={val.id}
         onClick={() => {
-          setPickMovie(val);
-          setCloseCart(!closeCart);
+          dispatch(setPickMovie(val));
+          dispatch(setCloseCart(!closeCart));
         }}
       >
         <div className="movie-img">
