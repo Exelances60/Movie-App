@@ -10,12 +10,12 @@ import {
   selectMovie,
   selectPickMovie,
 } from "../../store/movieApi/movieApi.selector";
-import { setİmbdData } from "../../store/movieApi/movieApi.action";
+import { setİmbdData } from "../../store/movieApi/movieApi.reducer";
 import {
   selectTrailer,
   selectWatchOpen,
 } from "../../store/movietrailerApi/trailer.selector";
-import { setWatch } from "../../store/movietrailerApi/trailer.action";
+import { setWatch } from "../../store/movietrailerApi/trailer.reducer";
 import ReactPlayer from "react-player";
 
 const HomeContainer = () => {

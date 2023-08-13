@@ -10,7 +10,7 @@ import {
 import {
   setCloseCart,
   setSelectMovie,
-} from "../../store/movieApi/movieApi.action";
+} from "../../store/movieApi/movieApi.reducer";
 
 const HomePageMovieAbout = ({
   imbdData,

@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import {
   fetchMovieAsycn,
   setMovie,
-} from "../../store/movieApi/movieApi.action";
+} from "../../store/movieApi/movieApi.reducer";
 import { selectQuery } from "../../store/movieApi/movieApi.selector";
 
 const HomePage = () => {

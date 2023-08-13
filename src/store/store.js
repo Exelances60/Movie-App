@@ -1,28 +1,25 @@
-import { applyMiddleware, compose, createStore } from "redux";
 import { rootReducer } from "./root-reducer";
-import storage from "redux-persist/lib/storage";
-import { persistReducer, persistStore } from "redux-persist";
+import { configureStore } from "@reduxjs/toolkit";
 import logger from "redux-logger";
-import thunk from "redux-thunk";
 
-const middleWares = [
-  process.env.NODE_ENV !== "products" && logger,
-  thunk,
-].filter(Boolean);
+const middleWares = [process.env.NODE_ENV !== "products" && logger].filter(
+  Boolean
+);
 
-const persistConfig = {
+/* const persistConfig = {
   key: "root",
   storage,
   whitelist: ["movieApi"], // `whitelist` olarak düzeltilmiş
-};
+}; */
 
-const persistedReducer = persistReducer(persistConfig, rootReducer);
+/* const persistedReducer = persistReducer(persistConfig, rootReducer);
+ */
+/* const composedEnhancers = compose(applyMiddleware(...middleWares, thunk)); */
+export const store = configureStore({
+  reducer: rootReducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(middleWares),
+});
 
-const composedEnhancers = compose(applyMiddleware(...middleWares, thunk));
-export const store = createStore(
-  persistedReducer,
-  undefined,
-  composedEnhancers
-);
-
-export const persistor = persistStore(store);
+/* export const persistor = persistStore(store);
+ */

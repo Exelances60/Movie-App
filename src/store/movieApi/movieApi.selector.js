@@ -4,7 +4,7 @@ const selectData = (state) => state.movieApi; // State içinden "data" parçası
 export const selectQuery = createSelector([selectData], (state) => state.query);
 export const selectMovie = createSelector(
   [selectData],
-  (movieApi) => movieApi.movie
+  (movieApi) => movieApi.movie.Search
 );
 export const selectPickMovie = (state) => state.movieApi.pickMovie;
 export const selectİmbdData = (state) => state.movieApi.imbdData;

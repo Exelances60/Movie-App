@@ -4,7 +4,7 @@ import HomePageAddListWindow from "../HomePageAddListWindow/HomePageAddListWindo
 import {
   setPickMovie,
   setCloseCart,
-} from "../../store/movieApi/movieApi.action";
+} from "../../store/movieApi/movieApi.reducer";
 import HomePageMovieAbout from "../HomePageMovieAbout/HomePageMovieAbout";
 import { useDispatch, useSelector } from "react-redux";
 import {

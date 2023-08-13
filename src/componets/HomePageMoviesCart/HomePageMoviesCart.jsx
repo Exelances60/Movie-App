@@ -1,9 +1,9 @@
 import "./HomePageMoviesCart.style.scss";
 import { MovieApiContext } from "../../context/MovieApi";
-import { setPickMovie } from "../../store/movieApi/movieApi.action";
+import { setPickMovie } from "../../store/movieApi/movieApi.reducer";
 import { useDispatch, useSelector } from "react-redux";
 import { selectCloseCart } from "../../store/movieApi/movieApi.selector";
-import { setCloseCart } from "../../store/movieApi/movieApi.action";
+import { setCloseCart } from "../../store/movieApi/movieApi.reducer";
 
 const HomePageMoviesCart = ({ val }) => {
   const dispatch = useDispatch();

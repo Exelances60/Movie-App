@@ -9,8 +9,8 @@ import { useEffect } from "react";
 import {
   fetchTrailerData,
   setWatch,
-} from "../../store/movietrailerApi/trailer.action";
-import { setPickMovie } from "../../store/movieApi/movieApi.action";
+} from "../../store/movietrailerApi/trailer.reducer";
+import { setPickMovie } from "../../store/movieApi/movieApi.reducer";
 
 import { selectPickMovie } from "../../store/movieApi/movieApi.selector";
 const HomePageWatched = ({
