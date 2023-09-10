@@ -1,5 +1,5 @@
 import { createContext, useReducer, useState } from "react";
-import { setQuery, setCloseCart } from "../store/movieApi/movieApi.action";
+import { setQuery, setCloseCart } from "../store/movieApi/movieApi.reducer";
 
 export const MovieApiContext = createContext({
   movie: [{}],

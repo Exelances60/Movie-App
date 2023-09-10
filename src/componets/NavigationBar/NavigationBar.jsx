@@ -1,6 +1,6 @@
 import React from "react";
 import "./NavigationBar.styles.scss";
-import { setQuery } from "../../store/movieApi/movieApi.action";
+import { setQuery } from "../../store/movieApi/movieApi.reducer";
 import { useDispatch } from "react-redux";
 
 const NavigationBar = () => {
