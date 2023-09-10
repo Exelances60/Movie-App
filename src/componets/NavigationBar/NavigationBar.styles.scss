@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .navbar {
   width: 98%;
   margin: auto;
@@ -48,3 +49,55 @@
     }
   }
 }
+=======
+.navbar {
+  width: 98%;
+  margin: auto;
+
+  height: 8%;
+  display: flex;
+  background-color: #5b38d2;
+  box-sizing: border-box;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  .logo {
+    font-family: "Quicksand", sans-serif;
+    cursor: pointer;
+    font-size: 25px;
+  }
+  .list {
+    list-style: none;
+    font-family: "Quicksand", sans-serif;
+    font-size: 18px;
+    display: flex;
+    li {
+      cursor: pointer;
+      margin-left: 10%;
+
+      &:first-child {
+        margin-left: 0;
+      }
+      &:last-child {
+        margin-right: 10px;
+      }
+    }
+  }
+  .search-input {
+    width: 25%;
+    background-color: #6a46f2;
+    height: 45%;
+    outline: none;
+    box-shadow: 2px 4px 15px -7px rgba(0, 0, 0, 0.75);
+    border-radius: 5px;
+    border: none;
+    &::placeholder {
+      color: white;
+      font-family: "Quicksand", sans-serif;
+      font-size: 18px;
+      text-align: center;
+    }
+  }
+}
+>>>>>>> master

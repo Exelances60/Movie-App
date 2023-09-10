@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .movie-cart {
   width: 100%;
   height: 40%;
@@ -41,3 +42,48 @@
     }
   }
 }
+=======
+.movie-cart {
+  width: 100%;
+  height: 40%;
+  border-radius: 10px 10px 0 0;
+  background-color: #263133;
+
+  .movie-cart-details {
+    width: 100%;
+
+    height: 100%;
+    display: flex;
+    .movie-cart-img {
+      width: 35%;
+      height: 100%;
+      img {
+        width: 100%;
+        border-radius: 10px 0 0 0;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .movie-cart-decps {
+      width: 70%;
+      height: 100%;
+      padding-left: 5%;
+      color: white;
+      font-family: "Montserrat", sans-serif;
+      box-sizing: border-box;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      span {
+        font-size: 15px;
+        &:nth-child(3) {
+          margin-top: 5%;
+        }
+        &:nth-child(4) {
+          margin-top: 3%;
+        }
+      }
+    }
+  }
+}
+>>>>>>> master

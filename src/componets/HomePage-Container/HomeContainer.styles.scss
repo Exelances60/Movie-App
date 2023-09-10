@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .home-container {
   width: 100%;
   height: 100%;
@@ -61,3 +62,71 @@
     height: 90%;
   }
 }
+=======
+.home-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 2%;
+
+  box-sizing: border-box;
+  @keyframes fadeInOverlay {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .overlay {
+    position: absolute;
+    margin-top: -2%;
+    background-color: rgba(0, 0, 0, 0.445);
+    width: 100%;
+    height: 92vh;
+    display: flex;
+    flex-direction: column;
+
+    /* Keyframe'i burada kullanalım */
+    animation: fadeInOverlay 0.5s ease-in-out forwards;
+
+    .close-overlay {
+      color: white;
+      display: flex;
+      justify-content: end;
+      box-sizing: border-box;
+
+      p {
+        cursor: pointer;
+        padding-right: 5%;
+      }
+    }
+    .trailerMovie {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 90%;
+      p {
+        color: white;
+      }
+    }
+  }
+  .left-container {
+    width: 40%;
+    background-color: #23272b;
+    height: 90%;
+    overflow-y: auto;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    border-radius: 10px;
+  }
+  .right-container {
+    width: 40%;
+    border-radius: 10px;
+    background-color: #23272b;
+    height: 90%;
+  }
+}
+>>>>>>> master
