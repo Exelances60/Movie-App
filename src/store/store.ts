@@ -1,16 +1,28 @@
-import { applyMiddleware, compose, createStore } from "redux";
+import { applyMiddleware, compose, createStore, Middleware } from "redux";
 import { rootReducer } from "./root-reducer";
 import storage from "redux-persist/lib/storage";
-import { persistReducer, persistStore } from "redux-persist";
+import { PersistConfig, persistReducer, persistStore } from "redux-persist";
 import logger from "redux-logger";
 import thunk from "redux-thunk";
+
+export type RootState = ReturnType<typeof rootReducer>;
+
+declare global {
+  interface Window {
+    __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose;
+  }
+}
+
+type ExtendedWindow = PersistConfig<RootState> & {
+  whitelist: (keyof RootState)[];
+};
 
 const middleWares = [
   process.env.NODE_ENV !== "products" && logger,
   thunk,
-].filter(Boolean);
+].filter((middleware): middleware is Middleware => Boolean(middleware));
 
-const persistConfig = {
+const persistConfig: ExtendedWindow = {
   key: "root",
   storage,
   whitelist: ["movieApi"], // `whitelist` olarak düzeltilmiş
